@@ -1,0 +1,16 @@
+# 🎧 AudioDigest
+
+An AI-powered app that converts uploaded files (text, image, audio, PDF) into easy-to-understand audio summaries for fast revision.
+
+## 🚀 Features
+- Multi-format upload (Text, Image, Audio, PDF)
+- AI topic extraction & simplification
+- Natural audio generation
+- Playlist mode for continuous revision
+- Flashcard generator & voice command support
+
+## 🛠️ Tech Stack
+Python, Flask, OpenAI, gTTS, OCR
+
+## 🌐 Live Demo
+Coming soon on Render!
