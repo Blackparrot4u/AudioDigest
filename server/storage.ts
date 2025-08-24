@@ -39,10 +39,19 @@ export class MemStorage implements IStorage {
   async createFile(insertFile: InsertFile): Promise<File> {
     const id = randomUUID();
     const file: File = { 
-      ...insertFile, 
       id, 
-      createdAt: new Date(),
-      flashcards: insertFile.flashcards || []
+      name: insertFile.name,
+      type: insertFile.type,
+      size: insertFile.size,
+      content: insertFile.content || null,
+      summary: insertFile.summary || null,
+      audioUrl: insertFile.audioUrl || null,
+      language: insertFile.language || null,
+      summaryLength: insertFile.summaryLength || null,
+      voiceSpeed: insertFile.voiceSpeed || null,
+      processed: insertFile.processed || null,
+      flashcards: (insertFile.flashcards || []) as Flashcard[],
+      createdAt: new Date()
     };
     this.files.set(id, file);
     return file;
@@ -72,9 +81,11 @@ export class MemStorage implements IStorage {
   async createPlaylist(insertPlaylist: InsertPlaylist): Promise<Playlist> {
     const id = randomUUID();
     const playlist: Playlist = { 
-      ...insertPlaylist, 
-      id, 
-      createdAt: new Date() 
+      id,
+      name: insertPlaylist.name,
+      fileIds: Array.isArray(insertPlaylist.fileIds) ? insertPlaylist.fileIds as string[] : [],
+      currentIndex: insertPlaylist.currentIndex || 0,
+      createdAt: new Date()
     };
     this.playlists.set(id, playlist);
     return playlist;

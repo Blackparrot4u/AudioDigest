@@ -1,16 +1,16 @@
-import { Play, Layers, Download, File, FileText, FileImage } from "lucide-react";
+import { Play, Layers, Download, File as FileIcon, FileText, FileImage } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { formatDistanceToNow } from "date-fns";
-import type { File } from "@shared/schema";
+import type { File as AppFile } from "@shared/schema";
 
 interface RecentFilesProps {
-  files: File[];
+  files: AppFile[];
 }
 
 export default function RecentFiles({ files }: RecentFilesProps) {
   const getFileIcon = (type: string) => {
-    if (type.includes('pdf')) return <File className="text-red-600 dark:text-red-400 text-sm" />;
+    if (type.includes('pdf')) return <FileIcon className="text-red-600 dark:text-red-400 text-sm" />;
     if (type.includes('image')) return <FileImage className="text-blue-600 dark:text-blue-400 text-sm" />;
     if (type.includes('word')) return <FileText className="text-blue-600 dark:text-blue-400 text-sm" />;
     return <FileText className="text-slate-600 dark:text-slate-400 text-sm" />;

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Play, Pause, SkipBack, SkipForward, FileText, FileImage, File } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, FileText, FileImage, File as FileIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
-import type { File } from "@shared/schema";
+import type { File as AppFile } from "@shared/schema";
 
 interface AudioPlayerProps {
-  files: File[];
+  files: AppFile[];
 }
 
 export default function AudioPlayer({ files }: AudioPlayerProps) {
@@ -41,7 +41,7 @@ export default function AudioPlayer({ files }: AudioPlayerProps) {
   }
 
   const getFileIcon = (type: string) => {
-    if (type.includes('pdf')) return <File className="text-white text-sm" />;
+    if (type.includes('pdf')) return <FileIcon className="text-white text-sm" />;
     if (type.includes('image')) return <FileImage className="text-white text-sm" />;
     return <FileText className="text-white text-sm" />;
   };

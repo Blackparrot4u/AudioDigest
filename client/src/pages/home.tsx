@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Brain, Mic, Moon, Sun, Home, Headphones, Layers, History } from "lucide-react";
+import { Brain, Mic, Moon, Sun, Home as HomeIcon, Headphones, Layers, History } from "lucide-react";
 import FileUpload from "@/components/FileUpload";
 import AudioPlayer from "@/components/AudioPlayer";
 import FlashcardViewer from "@/components/FlashcardViewer";
@@ -9,7 +9,7 @@ import RecentFiles from "@/components/RecentFiles";
 import QuickSettings from "@/components/QuickSettings";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
-import type { File } from "@shared/schema";
+import type { File as AppFile } from "@shared/schema";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -17,7 +17,7 @@ export default function Home() {
   const [currentSection, setCurrentSection] = useState("home");
   const isMobile = useIsMobile();
 
-  const { data: files = [], isLoading } = useQuery<File[]>({
+  const { data: files = [], isLoading } = useQuery<AppFile[]>({
     queryKey: ["/api/files"],
   });
 
@@ -139,7 +139,7 @@ export default function Home() {
               onClick={() => setCurrentSection("home")}
               className={`flex flex-col items-center py-2 px-4 ${currentSection === "home" ? "text-primary" : "text-slate-600 dark:text-slate-400"}`}
             >
-              <Home className="h-5 w-5 mb-1" />
+              <HomeIcon className="h-5 w-5 mb-1" />
               <span className="text-xs">Home</span>
             </button>
             <button
