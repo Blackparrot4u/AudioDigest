@@ -6,7 +6,7 @@ SummaryStream is a full-stack web application that processes documents and media
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+Preferred communication tyle: Simple, everyday language.
 
 ## System Architecture
 
