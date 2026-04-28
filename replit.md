@@ -2,7 +2,7 @@
 
 ## Overview
 
-SummaryStream is a full-stack web application that processes documents and media files into audio summaries with AI-generated flashcards. Users can upload various file types (PDFs, images, text files), which are then processed using OpenAI's GPT-4o model to generate summaries, flashcards, and text-to-speech audio output. The application features an audio player for listening to summaries, an interactive flashcard system for studying, and voice command functionality.
+SummaryStream is a full-stack web application that processes documents and media files into audio summaries with AI-generated flashcards. Users can upload various file types (PDFs, images, text files), which are then processed using OpenAI's GPT-4o model to generate summaries, flashcards, and text-to-speech audio output. The application features an audio player for listening to summaries, an interactiveflashcard system for studying, and voice command functionality.
 
 ## User Preferences
 
