@@ -8,7 +8,7 @@ SummaryStream is a full-stack web application that processes documents and media
 
 Preferred communication tyle: Simple, everyday language.
 
-## System Architecture
+## System chitecture
 
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript using Vite as the build tool
